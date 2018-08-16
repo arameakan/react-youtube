@@ -1,25 +1,24 @@
 import React, { Component } from "react";
+import "../styles/style.css";
 
 class SearchBar extends Component {
   state = {
     term: ""
   };
 
-  onInputChange = e => {
-    const { value } = e.target;
-    this.setState(() => ({ term: value }));
-  };
-
-  handlePrintState = e => {
-    e.preventDefault();
-    console.log(this.state.term);
+  onInputChange = term => {
+    this.setState(() => ({ term }));
+    this.props.onSearchTermChange(term);
   };
 
   render() {
     return (
-      <div>
-        <input type="text" name="" onChange={this.onInputChange} />
-        <button onClick={this.handlePrintState}>Add</button>
+      <div className="search-bar">
+        <input
+          type="text"
+          name=""
+          onChange={e => this.onInputChange(e.target.value)}
+        />
       </div>
     );
   }

@@ -17,14 +17,14 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: ["style-loade", "css-loader"]
+        use: ["style-loader", "css-loader"]
       }
     ]
   },
   plugins: [
     new CleanWebpackPlugin(["dist"]),
     new HtmlWebpackPlugin({
-      template: "./public/index.html"
+      template: "./index.html"
     })
   ],
   output: {

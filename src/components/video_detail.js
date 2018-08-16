@@ -1,4 +1,5 @@
 import React from "react";
+import "../styles/style.css";
 
 const VideoDetail = ({ video }) => {
   if (!video) {
@@ -8,8 +9,8 @@ const VideoDetail = ({ video }) => {
   const videoId = video.id.videoId;
   const url = `https://www.youtube.com/embed/${videoId}`;
   return (
-    <div className="video-detail col-md-8">
-      <div className="embed-responsive embed-responsive-16b9">
+    <div className="video-detail">
+      <div className="video ">
         <iframe src={url} className="embed-responsive-item">
           {"Hi"}
         </iframe>
